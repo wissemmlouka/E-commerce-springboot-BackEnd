@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/ecommerceproject
+    password: Password123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  main:
+    allow-circular-references: true
+
+
+server:
+  port: 8083
