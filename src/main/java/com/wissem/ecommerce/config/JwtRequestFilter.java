@@ -1,8 +1,8 @@
-package com.wissem.ecommerce.jwt.config;
+package com.wissem.ecommerce.config;
 
 
-import com.wissem.ecommerce.jwt.service.JwtService;
-import com.wissem.ecommerce.jwt.util.JwtUtil;
+import com.wissem.ecommerce.service.JwtService;
+import com.wissem.ecommerce.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

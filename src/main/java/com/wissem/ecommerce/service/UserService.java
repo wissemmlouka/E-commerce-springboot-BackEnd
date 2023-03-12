@@ -1,10 +1,10 @@
-package com.wissem.ecommerce.jwt.service;
+package com.wissem.ecommerce.service;
 
 
-import com.wissem.ecommerce.jwt.dao.RoleDAO;
-import com.wissem.ecommerce.jwt.dao.UserDAO;
-import com.wissem.ecommerce.jwt.entity.Role;
-import com.wissem.ecommerce.jwt.entity.User;
+import com.wissem.ecommerce.dao.RoleDAO;
+import com.wissem.ecommerce.dao.UserDAO;
+import com.wissem.ecommerce.entity.Role;
+import com.wissem.ecommerce.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

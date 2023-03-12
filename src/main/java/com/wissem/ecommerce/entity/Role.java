@@ -1,4 +1,4 @@
-package com.wissem.ecommerce.jwt.entity;
+package com.wissem.ecommerce.entity;
 
 
 import jakarta.persistence.Entity;

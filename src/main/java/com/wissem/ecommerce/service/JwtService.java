@@ -1,11 +1,11 @@
-package com.wissem.ecommerce.jwt.service;
+package com.wissem.ecommerce.service;
 
 
-import com.wissem.ecommerce.jwt.dao.UserDAO;
-import com.wissem.ecommerce.jwt.entity.JwtRequest;
-import com.wissem.ecommerce.jwt.entity.JwtResponse;
-import com.wissem.ecommerce.jwt.entity.User;
-import com.wissem.ecommerce.jwt.util.JwtUtil;
+import com.wissem.ecommerce.dao.UserDAO;
+import com.wissem.ecommerce.entity.JwtRequest;
+import com.wissem.ecommerce.entity.JwtResponse;
+import com.wissem.ecommerce.entity.User;
+import com.wissem.ecommerce.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

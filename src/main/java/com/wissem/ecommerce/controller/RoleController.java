@@ -1,8 +1,8 @@
-package com.wissem.ecommerce.jwt.controller;
+package com.wissem.ecommerce.controller;
 
 
-import com.wissem.ecommerce.jwt.entity.Role;
-import com.wissem.ecommerce.jwt.service.RoleService;
+import com.wissem.ecommerce.entity.Role;
+import com.wissem.ecommerce.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

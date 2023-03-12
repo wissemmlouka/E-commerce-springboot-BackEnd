@@ -1,8 +1,8 @@
-package com.wissem.ecommerce.jwt.controller;
+package com.wissem.ecommerce.controller;
 
 
-import com.wissem.ecommerce.jwt.entity.User;
-import com.wissem.ecommerce.jwt.service.UserService;
+import com.wissem.ecommerce.entity.User;
+import com.wissem.ecommerce.service.UserService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

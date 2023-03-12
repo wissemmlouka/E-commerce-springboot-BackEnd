@@ -1,6 +1,7 @@
-package com.wissem.ecommerce.jwt.entity;
+package com.wissem.ecommerce.entity;
 
 
+import com.wissem.ecommerce.entity.Role;
 import jakarta.persistence.*;
 import lombok.*;
 

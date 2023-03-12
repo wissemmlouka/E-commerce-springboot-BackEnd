@@ -1,4 +1,4 @@
-package com.wissem.ecommerce.jwt.config;
+package com.wissem.ecommerce.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

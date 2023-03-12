@@ -1,4 +1,4 @@
-package com.wissem.ecommerce.jwt.util;
+package com.wissem.ecommerce.util;
 
 
 import io.jsonwebtoken.Claims;

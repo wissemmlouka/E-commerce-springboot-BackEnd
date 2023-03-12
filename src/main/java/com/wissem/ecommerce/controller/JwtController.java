@@ -1,11 +1,14 @@
-package com.wissem.ecommerce.jwt.controller;
+package com.wissem.ecommerce.controller;
 
 
-import com.wissem.ecommerce.jwt.entity.JwtRequest;
-import com.wissem.ecommerce.jwt.entity.JwtResponse;
-import com.wissem.ecommerce.jwt.service.JwtService;
+import com.wissem.ecommerce.entity.JwtRequest;
+import com.wissem.ecommerce.entity.JwtResponse;
+import com.wissem.ecommerce.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin

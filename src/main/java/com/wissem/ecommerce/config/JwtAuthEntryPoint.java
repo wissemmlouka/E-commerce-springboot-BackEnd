@@ -1,4 +1,4 @@
-package com.wissem.ecommerce.jwt.config;
+package com.wissem.ecommerce.config;
 
 
 import jakarta.servlet.ServletException;

@@ -1,8 +1,8 @@
-package com.wissem.ecommerce.jwt.service;
+package com.wissem.ecommerce.service;
 
 
-import com.wissem.ecommerce.jwt.dao.RoleDAO;
-import com.wissem.ecommerce.jwt.entity.Role;
+import com.wissem.ecommerce.dao.RoleDAO;
+import com.wissem.ecommerce.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
