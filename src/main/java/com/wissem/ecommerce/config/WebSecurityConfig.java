@@ -39,7 +39,7 @@ public class WebSecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests(requests -> {
-                    requests.requestMatchers("/registerNewUser","/authenticate").permitAll()
+                    requests.requestMatchers("/registerNewUser", "/authenticate").permitAll()
                             .anyRequest().authenticated();
                 });
 
@@ -49,8 +49,6 @@ public class WebSecurityConfig {
         ;
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
-
-
 
 
     }
