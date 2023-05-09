@@ -58,19 +58,6 @@ public class UserService {
                 .build();
         userDAO.save(adminUser);
 
-
-     /*   Set<Role> userRoles = new HashSet<>();
-        userRoles.add(userRole);
-        User user = User.builder()
-                .userFirstName("wissem")
-                .userLastName("mlouka")
-                .userName("wissem@gmail.com")
-                .userPassword(getEncoderPassword("wissem@pass"))
-                .roles(userRoles)
-                .build();
-        userDAO.save(user);
-*/
-
     }
 
     public String getEncoderPassword(String password) {

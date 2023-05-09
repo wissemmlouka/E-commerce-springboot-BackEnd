@@ -19,6 +19,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
     private String productName;
+    @Column(length = 2000)
     private String productDescription;
     private Double productDiscountedPrice;
     private Double productActualPrice;
@@ -35,6 +36,6 @@ public class Product {
                     referencedColumnName = "imageId"
             )
     )
-    private Set<ImageModel> images;
+    private Set<ImageModel> productImages;
 
 }

@@ -39,7 +39,7 @@ public class WebSecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests(requests -> {
-                    requests.requestMatchers("/registerNewUser", "/authenticate").permitAll()
+                    requests.requestMatchers("/registerNewUser", "/authenticate","/product/getAllProducts","/product/getProductById/{productId}").permitAll()
                             .anyRequest().authenticated();
                 });
 

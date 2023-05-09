@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -19,17 +20,19 @@ import java.util.Set;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
     @PreAuthorize("hasRole('Admin')")
     @PostMapping(value = {"/addNewProduct"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public Product addNewProduct(@RequestPart("product") Product product,
                                  @RequestPart("imagesFile") MultipartFile[] file) {
-        //return productService.addNewProduct(product);
 
-        try{
-          Set<ImageModel> images=uploadImage(file);
-          product.setImages(images);
-        return   productService.addNewProduct(product);
-        }catch (Exception e){
+        try {
+            Set<ImageModel> images = uploadImage(file);
+
+            product.setProductImages(images);
+            System.out.println("product:   " + product);
+            return productService.addNewProduct(product);
+        } catch (Exception e) {
 
             System.out.println(e.getMessage());
             return null;
@@ -50,4 +53,19 @@ public class ProductController {
         return imageModels;
     }
 
+    @GetMapping({"/getAllProducts"})
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    @PreAuthorize("hasRole('Admin')")
+    @DeleteMapping({"/deleteProduct/{productId}"})
+    public void deleteProduct(@PathVariable("productId") int productId) {
+        productService.deleteProduct(productId);
+    }
+
+    @GetMapping({"/getProductById/{productId}"})
+    public Product getProductById(@PathVariable("productId") int productId) {
+        return productService.getProductById(productId);
+    }
 }
