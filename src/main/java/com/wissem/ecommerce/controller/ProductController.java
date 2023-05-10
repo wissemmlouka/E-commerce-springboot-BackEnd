@@ -5,6 +5,7 @@ import com.wissem.ecommerce.entity.ImageModel;
 import com.wissem.ecommerce.entity.Product;
 import com.wissem.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -54,8 +55,8 @@ public class ProductController {
     }
 
     @GetMapping({"/getAllProducts"})
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public List<Product> getAllProducts(@RequestParam(defaultValue = "0") int pageNumber) {
+        return productService.getAllProducts(pageNumber);
     }
 
     @PreAuthorize("hasRole('Admin')")
