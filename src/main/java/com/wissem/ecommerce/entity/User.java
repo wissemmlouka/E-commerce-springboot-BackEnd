@@ -16,7 +16,7 @@ import java.util.Set;
 @Builder
 public class User {
 
-@Id
+    @Id
     private String userName;
     private String userFirstName;
     private String userLastName;
