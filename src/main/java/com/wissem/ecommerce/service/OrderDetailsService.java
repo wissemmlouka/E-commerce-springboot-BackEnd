@@ -2,6 +2,7 @@ package com.wissem.ecommerce.service;
 
 
 import com.wissem.ecommerce.config.JwtRequestFilter;
+import com.wissem.ecommerce.dao.CartDao;
 import com.wissem.ecommerce.dao.OrderDetailsDAO;
 import com.wissem.ecommerce.dao.ProductDao;
 import com.wissem.ecommerce.dao.UserDAO;
@@ -20,9 +21,10 @@ public class OrderDetailsService {
     private ProductDao productDao;
     @Autowired
     private UserDAO userDAO;
+    @Autowired
+    private CartDao cartDao;
 
-
-    public void placeOrder(OrderInput orderInput) {
+    public void placeOrder(OrderInput orderInput, boolean isSingleProductCheckout) {
         List<OrderProductQuantity> orderProductQuantities = orderInput.getOrderProductQuantities();
         for (OrderProductQuantity o : orderProductQuantities) {
 
@@ -40,9 +42,14 @@ public class OrderDetailsService {
                     user
 
             );
-
-             orderDetailsDAO.save(orderDetail);
+            if (!isSingleProductCheckout) {
+                List<Cart> carts = cartDao.findByUser(user);
+                carts.stream().forEach(x -> cartDao.deleteById(x.getCartId())
+                );
+            }
+            orderDetailsDAO.save(orderDetail);
         }
 
     }
+
 }
