@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductDao extends CrudRepository<Product,Integer> {
-  public List<Product> findAll(Pageable pageable);
+public interface ProductDao extends CrudRepository<Product, Integer> {
+    public List<Product> findAll(Pageable pageable);
+
+    public List<Product> findAllByProductNameContainingIgnoreCaseOrProductDescriptionContainingIgnoreCase(String searchKey1,String searchKey2, Pageable pageable);
+
 }

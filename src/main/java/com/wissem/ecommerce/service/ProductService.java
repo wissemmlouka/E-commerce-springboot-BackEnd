@@ -22,9 +22,13 @@ public class ProductService {
         return productDao.save(product);
     }
 
-    public List<Product> getAllProducts(int pageNumber) {
+    public List<Product> getAllProducts(int pageNumber,String searchKey) {
         Pageable pageable= PageRequest.of(pageNumber,2);
-        return  productDao.findAll(pageable);
+        if(searchKey.equals("")) {
+            return productDao.findAll(pageable);
+        }else {
+          return productDao.findAllByProductNameContainingIgnoreCaseOrProductDescriptionContainingIgnoreCase(searchKey,searchKey,pageable);
+        }
     }
 
 
