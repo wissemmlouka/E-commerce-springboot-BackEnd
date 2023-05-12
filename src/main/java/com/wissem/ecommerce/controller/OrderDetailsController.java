@@ -1,8 +1,10 @@
 package com.wissem.ecommerce.controller;
 
 
+import com.razorpay.RazorpayException;
 import com.wissem.ecommerce.entity.OrderDetail;
 import com.wissem.ecommerce.entity.OrderInput;
+import com.wissem.ecommerce.entity.TransactionDetails;
 import com.wissem.ecommerce.service.OrderDetailsService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +42,11 @@ public class OrderDetailsController {
     @GetMapping({"/orderDelivered/{orderId}"})
     public OrderDetail orderDelivered(@PathVariable(name = "orderId")int orderId){
         return orderDetailsService.orderDelivered(orderId);
+    }
+
+    @PreAuthorize("hasRole('User')")
+    @GetMapping({"/createTransaction/{amount}"})
+    public TransactionDetails createTransaction(@PathVariable(name = "amount")Double amount) throws RazorpayException {
+     return  orderDetailsService.createTransaction(amount);
     }
 }
